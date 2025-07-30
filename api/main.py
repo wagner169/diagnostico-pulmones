@@ -17,6 +17,9 @@ MODEL_PATH = "modelos/modelo_diagnostico.h5"
 GOOGLE_DRIVE_ID = "1ARK-Xj1KiB78McFCqJHJ-dUFz781yfG8"
 GOOGLE_DRIVE_URL = f"https://drive.google.com/uc?id={GOOGLE_DRIVE_ID}"
 
+# Asegura que la carpeta 'modelos' exista
+os.makedirs("modelos", exist_ok=True)
+
 # Descarga automática si no existe
 if not os.path.exists(MODEL_PATH):
     print("🔽 Descargando modelo desde Google Drive...")
@@ -76,6 +79,7 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return {"error": str(e)}
 
-# Para correr localmente: uvicorn api.main:app --reload
+# Para correr localmente o en producción (Render)
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
+
