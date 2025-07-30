@@ -72,3 +72,6 @@ python scripts/predictor.py
 - OpenCV
 
  
+=======
+# diagnostico-pulmones
+>>>>>>> 9ea0b24f81d248786e722c226c1e0c80077a8068
