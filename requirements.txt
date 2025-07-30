@@ -1,0 +1,11 @@
+tensorflow
+numpy
+matplotlib
+opencv-python
+seaborn
+scikit-learn
+fastapi
+uvicorn
+python-multipart
+gdown
+

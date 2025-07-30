@@ -1,0 +1,38 @@
+# ░░ ARCHIVOS DE PYTHON ░░
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ░░ ENTORNOS VIRTUALES ░░
+venv/
+env/
+.venv/
+ENV/
+Lib/
+Scripts/
+
+# ░░ ARCHIVOS DE MODELO ░░
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# ░░ CONFIGURACIONES DE PYCHARM ░░
+.idea/
+*.iml
+
+# ░░ ARCHIVOS TEMPORALES / LOGS ░░
+*.log
+*.tmp
+*.swp
+*.bak
+
+# ░░ SISTEMAS OPERATIVOS ░░
+.DS_Store
+Thumbs.db
+
+# ░░ ARCHIVOS DE SALIDA ░░
+__outputs__/
+*.png
+*.jpg
+*.jpeg
