@@ -7,8 +7,8 @@ Elizabeth Amada Martínez Reyes
 Iván Vera Torres
 
 
-#¡Accede a la vanguardia de la IA en diagnóstico médico!
-#Resumen
+##¡Accede a la vanguardia de la IA en diagnóstico médico!
+##Resumen
 
 Ponemos a tu disposición un conjunto de modelos de Inteligencia Artificial de alto rendimiento, diseñados y optimizados para analizar radiografías de tórax. Nuestros modelos entrenados no son solo software; son activos digitales listos para ser integrados en tus aplicaciones, sistemas o plataformas existentes, brindando la capacidad de diagnosticar con una precisión superior.
 
