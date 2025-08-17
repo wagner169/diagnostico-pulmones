@@ -2,7 +2,7 @@
 
 Este proyecto utiliza modelos de deep learning para diagnosticar automáticamente enfermedades pulmonares a partir de radiografías de tórax.
 
-## Funcionalidades
+## Descripcion Tecnica del proyecto
 
 - Clasificación de imágenes en 4 clases: **COVID, Normal, Neumonía Viral, Opacidad Pulmonar**
 - Arquitectura CNN tipo VGG
