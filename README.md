@@ -57,7 +57,7 @@ El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Ne
 
 ## Nuestro Equipo
 
-Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de expertos en Inteligencia Artificial de la UEES:
+Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
 
 Wagner Moreno Alvarado
 
