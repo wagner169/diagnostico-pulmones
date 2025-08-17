@@ -1,18 +1,18 @@
 # Sistema de Diagnóstico Médico por Imágenes (Pulmones)
 # Proyecto UEES - Inteligencia Artificial
-#Integrantes:
+# Integrantes:
 Wagner Moreno Alvarado
 Jean Paul Amay Cruz
 Elizabeth Amada Martínez Reyes
 Iván Vera Torres
 
 
-##¡Accede a la vanguardia de la IA en diagnóstico médico!
-##Resumen
+## ¡Accede a la vanguardia de la IA en diagnóstico médico!
+## Resumen
 
 Ponemos a tu disposición un conjunto de modelos de Inteligencia Artificial de alto rendimiento, diseñados y optimizados para analizar radiografías de tórax. Nuestros modelos entrenados no son solo software; son activos digitales listos para ser integrados en tus aplicaciones, sistemas o plataformas existentes, brindando la capacidad de diagnosticar con una precisión superior.
 
-#Nuestros Modelos Entrenados:
+## Nuestros Modelos Entrenados:
 
 Hemos desarrollado y optimizado modelos de aprendizaje profundo que sobresalen en la clasificación de imágenes médicas.
 
@@ -38,7 +38,7 @@ Resultados Confiables: Reduce la carga de diagnóstico en el personal médico co
 
 Escalabilidad Garantizada: Nuestros modelos han sido optimizados para un despliegue eficiente, asegurando que tu sistema pueda manejar un alto volumen de predicciones de manera ágil.
 
-#Cómo Usar e Interpretar los Resultados
+## Cómo Usar e Interpretar los Resultados
 
 Uso: Simplemente pasa una radiografía de tórax a la API o sistema donde integres el modelo.
 
@@ -47,7 +47,7 @@ Resultados: El modelo retornará una predicción con un nivel de confianza (por 
 
 
 
-#Nuestro Equipo
+## Nuestro Equipo
 
 Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de expertos en Inteligencia Artificial y salud de la UEES:
 
