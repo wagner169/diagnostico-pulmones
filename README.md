@@ -1,4 +1,11 @@
 # Sistema de Diagnóstico Médico por Imágenes (Pulmones)
+# Proyecto UEES - Inteligencia Artificial
+#Integrantes:
+Wagner Moreno Alvarado
+Jean Paul Amay Cruz
+Elizabeth Amada Martínez Reyes
+Iván Vera Torres
+
 
 Este proyecto utiliza modelos de deep learning para diagnosticar automáticamente enfermedades pulmonares a partir de radiografías de tórax.
 
