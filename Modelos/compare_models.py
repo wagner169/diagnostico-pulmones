@@ -1,36 +1,87 @@
-import os
-import re
-import pandas as pd
+import io
+from pathlib import Path
+import gdown
+import torch
+import torch.nn.functional as F
+from PIL import Image
+from torchvision import models, transforms
 
-OUTPUTS_DIR = 'outputs'
-files = {
-    'ResNet-50':       os.path.join(OUTPUTS_DIR, 'resnet50_metrics.txt'),
-    'DenseNet-121':    os.path.join(OUTPUTS_DIR, 'densenet121_metrics.txt'),
-    'EfficientNet-B0': os.path.join(OUTPUTS_DIR, 'efficientnet_b0_metrics.txt'),
+# ---- Config ----
+FILES = {
+    "resnet50": "1yhdFMGyaw-gW4yU5pPl6CFJRZVvS44np",
+    "densenet121": "1KpLhlrcAgSaIUIIABNpu6LzFGGG-a2TS",
+    "efficientnet_b0": "1FuliZMAQdaiOWYlsahiYJqzc8fy_2oUQ",
 }
+CLASS_NAMES = ["Normal", "Opacidad Pulmonar", "Neumonía", "COVID-19"]
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+MODELS_DIR = Path("models")
+MODELS_DIR.mkdir(exist_ok=True)
 
-rows = []
-for name, path in files.items():
-    if not os.path.exists(path):
-        print(f"⚠️  No existe: {path}")
-        rows.append({'Modelo': name, 'Accuracy': None, 'F1 Macro': None, 'F1 Weighted': None})
-        continue
-    with open(path, 'r', encoding='utf-8') as f:
-        text = f.read()
-    acc = re.search(r"Accuracy:\s*([\d.]+)", text)
-    f1m = re.search(r"F1\s*\(macro\):\s*([\d.]+)", text)
-    f1w = re.search(r"F1\s*\(weighted\):\s*([\d.]+)", text)
-    rows.append({
-        'Modelo': name,
-        'Accuracy': float(acc.group(1)) if acc else None,
-        'F1 Macro': float(f1m.group(1)) if f1m else None,
-        'F1 Weighted': float(f1w.group(1)) if f1w else None,
-    })
+# ---- Descarga pesos ----
+for name, fid in FILES.items():
+    out = MODELS_DIR / f"{name}.pth"
+    if not out.exists():
+        url = f"https://drive.google.com/uc?id={fid}"
+        print(f"⬇ Descargando {name} ...")
+        gdown.download(url, str(out), quiet=False)
 
-out = pd.DataFrame(rows).sort_values(by=['Accuracy','F1 Macro','F1 Weighted'], ascending=False)
-print(out)
+# ---- Preprocesado ----
+IMG_TFMS = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406],
+                         [0.229, 0.224, 0.225])
+])
 
-os.makedirs(OUTPUTS_DIR, exist_ok=True)
-out.to_excel(os.path.join(OUTPUTS_DIR, 'comparacion_modelos.xlsx'), index=False)
-out.to_csv(os.path.join(OUTPUTS_DIR, 'comparacion_modelos.csv'), index=False, encoding='utf-8', float_format='%.6f')
-print('✅ Guardado compare: outputs/comparacion_modelos.xlsx y .csv')
+def _strip_module(state_dict):
+    if any(k.startswith("module.") for k in state_dict):
+        return {k.replace("module.", "", 1): v for k, v in state_dict.items()}
+    return state_dict
+
+def load_models():
+    resnet = models.resnet50(weights=None)
+    resnet.fc = torch.nn.Linear(resnet.fc.in_features, len(CLASS_NAMES))
+
+    densenet = models.densenet121(weights=None)
+    densenet.classifier = torch.nn.Linear(densenet.classifier.in_features, len(CLASS_NAMES))
+
+    efficient = models.efficientnet_b0(weights=None)
+    efficient.classifier[1] = torch.nn.Linear(efficient.classifier[1].in_features, len(CLASS_NAMES))
+
+    models_dict = {
+        "resnet50": resnet,
+        "densenet121": densenet,
+        "efficientnet_b0": efficient
+    }
+
+    for name, model in models_dict.items():
+        state = torch.load(MODELS_DIR / f"{name}.pth", map_location="cpu")
+        if isinstance(state, dict) and "state_dict" in state:
+            state = state["state_dict"]
+        model.load_state_dict(_strip_module(state), strict=False)
+        model.eval().to(DEVICE)
+
+    return models_dict
+
+def predict_best(image_path: str):
+    img = Image.open(image_path).convert("RGB")
+    x = IMG_TFMS(img).unsqueeze(0).to(DEVICE)
+
+    models_dict = load_models()
+    results = {}
+    for name, model in models_dict.items():
+        with torch.inference_mode():
+            p = F.softmax(model(x), dim=1).squeeze(0).cpu().tolist()
+            results[name] = {cls: float(p[i]) for i, cls in enumerate(CLASS_NAMES)}
+
+    # elegir el modelo más seguro en su predicción
+    best_model = max(results, key=lambda m: max(results[m].values()))
+    best_class = max(results[best_model], key=results[best_model].get)
+    return best_model, best_class, results[best_model]
+
+# ---- Ejemplo ----
+if __name__ == "__main__":
+    modelo, clase, probs = predict_best("ejemplo.jpg")
+    print(f"🏆 Mejor modelo: {modelo}")
+    print(f"✅ Predicción: {clase}")
+    print("Probs:", probs)
