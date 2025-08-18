@@ -83,7 +83,7 @@ ResNet50	94.6%	94.8%
  <img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/4a12d75f-24a5-4280-bf50-05f46e792859" />
 
 (Nota: El bloque representa el porcentaje del puntaje F1. Cuanto más alta la barra, mejor el rendimiento del modelo.)
-Estas métricas demuestran que la solución no solo da una respuesta, sino que la da después los modelos se ponen en marcha, seleccionando la opinión de mayor calidad para ofrecer el diagnóstico más fiable.
+Estas métricas demuestran que la solución no solo da una respuesta, sino que la da después de que los modelos se ponen en marcha, seleccionan la opinión de mayor calidad para ofrecer el diagnóstico más fiable.
 
 
 ## Demostración de la Lógica de la API (la Selección del Resultado)
