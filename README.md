@@ -31,7 +31,7 @@ Normal
 Utilizan una arquitectura de red neuronal convolucional (CNN) tipo VGG, reconocida por su robustez y capacidad para extraer características complejas de las imágenes.
 
 ## Formatos de Fácil Integración: 
-Entregamos los modelos en formatos estándar de la industria (.h5 y .keras), lo que garantiza una integración sencilla y sin fricciones en una amplia gama de entornos de desarrollo, desde APIs hasta aplicaciones de escritorio o móviles.
+Entregamos los modelos en formatos estándar de la industria (.pth), lo que garantiza una integración sencilla y sin fricciones en una amplia gama de entornos de desarrollo, desde APIs hasta aplicaciones de escritorio o móviles.
 
 ## El Valor de Integrar Nuestros Modelos
 
