@@ -143,6 +143,46 @@ Elizabeth Amada Martínez Reyes
 
 Iván Vera Torres
 
+## Enlaces de interes
+Modelos entrenados
+
+Efficientnet
+
+https://drive.google.com/file/d/1KpLhlrcAgSaIUIIABNpu6LzFGGG-a2TS/view?usp=drive_link 
+
+Densenet
+
+https://drive.google.com/file/d/1FuliZMAQdaiOWYlsahiYJqzc8fy_2oUQ/view?usp=drive_link 
+
+resnet
+
+https://drive.google.com/file/d/1yhdFMGyaw-gW4yU5pPl6CFJRZVvS44np/view?usp=drive_link
+
+
+
+Api para usar el servicio y los modelos entrenados
+
+https://ensemble-api-qzpf.onrender.com
+
+
+
+Aplicación funcional con las métricas para poder usar el api
+
+https://uees-lung-x-ray.vercel.app/
+
+
+
+GitHub del modelo entrenado para render
+
+https://github.com/wagner169/ensemble-api
+
+
+
+GitHub de la aplicación 
+
+https://github.com/ElizaMarti/UEES-LungX-Ray/tree/main
+
+
 ## Instrucciones de uso
 
 1.- Instalar dependencias: 
