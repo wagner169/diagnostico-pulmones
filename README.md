@@ -118,10 +118,11 @@ Carpeta modelos:
 
 Carpeta scripts:
 
-- cargar_datos.py
-- entrenar_modelo.py
-- evaluar_modelo.py
-- predictor.py
+- compare_models
+- process_masks.py
+- train_densenet121
+- train_efficientnet_b0
+- train_resnet50
 
 Carpeta api
 
