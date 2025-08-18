@@ -131,7 +131,6 @@ README.md
 requirements.txt
 .gitignore
 
-
 ## Nuestro Equipo
 
 Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
@@ -143,7 +142,6 @@ Jean Paul Amay Cruz
 Elizabeth Amada Martínez Reyes
 
 Iván Vera Torres
-
 
 ## Instrucciones de uso
 
