@@ -59,6 +59,43 @@ El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Ne
 
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/95313148-2639-4bd3-9eb9-e26f71cde9c3" />
 
+Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro inteligente que elimina las costillas y otros ruidos para enfocarse únicamente en el tejido pulmonar. Esto asegura que nuestra IA tome sus decisiones basándose en la evidencia más relevante para un diagnóstico.
+Mascara
+ 
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/041ec458-5879-48ec-b57d-080761aa3226" />
+
+
+Imagen con filtro aplicado, lista para procesar exactamente los pulmones
+ 
+<img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/345dcb9c-9e65-4a6b-93ee-43b1aea13c66" />
+
+Demostración de las Métricas 
+Cada radiografía es analizada simultáneamente por cada modelo entrenado (deep learning) de Inteligencia Artificial. Al comparar sus métricas de rendimiento, podemos justificar por qué el sistema confía más en uno que en otro para dar la respuesta final.
+Cuadro comparativo de rendimiento general
+<img width="572" height="247" alt="image" src="https://github.com/user-attachments/assets/2a5e33d1-fb8f-4410-9630-7f40c284723e" />
+
+Este cuadro muestra los resultados de cada modelo, demostrando su fiabilidad probada en nuestras evaluaciones.
+Modelo	Precisión (Accuracy)	Puntaje F1 (Weighted)
+EfficientNet-B0	95.8%	96.1%
+DenseNet121	95.1%	95.5%
+ResNet50	94.6%	94.8%
+
+ <img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/4a12d75f-24a5-4280-bf50-05f46e792859" />
+
+(Nota: El bloque representa el porcentaje del puntaje F1. Cuanto más alta la barra, mejor el rendimiento del modelo.)
+Estas métricas demuestran que la solución no solo da una respuesta, sino que la da después los modelos se ponen en marcha, seleccionando la opinión de mayor calidad para ofrecer el diagnóstico más fiable.
+
+
+## Demostración de la Lógica de la API (la Selección del Resultado)
+
+<img width="975" height="975" alt="image" src="https://github.com/user-attachments/assets/14a08441-0b01-420b-8ae8-fbcb289e577b" />
+
+ 
+Una vez que cada modelo ha dado su diagnóstico, toma la decisión final con una lógica simple pero poderosa: seleccionar el diagnóstico que tiene el mayor nivel de confianza. Por ejemplo, si los tres modelos analizan la misma radiografía y sus resultados son:
+o	ResNet50: Neumonía (92% de confianza)
+o	DenseNet121: Neumonía (93% de confianza)
+o	EfficientNet-B0: Neumonía (98% de confianza)
+La API presenta al usuario el resultado de Neumonía con un 98% de confianza, porque fue el diagnóstico más sólido. Esta es nuestra forma de garantizar que el resultado final sea siempre el más confiable y seguro posible para el profesional."
 
 
 ## Descripcion Tecnica del proyecto
