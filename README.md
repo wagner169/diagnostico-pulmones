@@ -50,8 +50,14 @@ Nuestros modelos han sido optimizados para un despliegue eficiente, asegurando q
 Simplemente pasa una radiografía de tórax a la API o sistema donde integres el modelo.
 
 ## Resultados: 
-El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Neumonía Viral" con un 95% de confianza). Puedes utilizar este resultado para apoyar la toma de decisiones clínicas.
+El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Neumonía Viral" con un 95% de confianza). Puedes utilizar este resultado para apoyar la toma de decisiones clínicas. Usando el compare.py utiliza los 3 modelos y entrega la top class explicado en esta linea de codigo:
 
+    # elegir el modelo más seguro en su predicción
+    best_model = max(results, key=lambda m: max(results[m].values()))
+    best_class = max(results[best_model], key=results[best_model].get)
+    return best_model, best_class, results[best_model]
+
+de esta manera escoje el mejor model para la prediccion y tambien los resultados de los demas pronosticos.
 
 ## Interpretabilidad
 ## Demostración del Pre-procesamiento (la Máscara)
