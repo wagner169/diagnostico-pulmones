@@ -113,11 +113,6 @@ Carpeta Pulmones contiene:
 
 Carpeta modelos: 
 
-- modelo_diagnostico.h5
-- modelo_pulmones_mejor.keras
-
-Carpeta scripts:
-
 - compare_models
 - process_masks.py
 - train_densenet121
@@ -211,17 +206,21 @@ python scripts/predictor.py
 
 - Python 3.10+
 
-- TensorFlow
+- TensorFlow 2.15+
 
-- NumPy
+- NumPy 1.26+
 
-- Matplotlib
+- Matplotlib 3.8+
 
-- Seaborn
+- Seaborn 0.12+
 
-- Scikit-learn
+- Scikit-learn 1.3+
 
-- OpenCV
+- OpenCV 4.9+
+
+- Pandas 2.1+
+
+- Pillow 10.0+
 
  
 =======
