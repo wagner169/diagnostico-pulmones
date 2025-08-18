@@ -104,7 +104,7 @@ La API presenta al usuario el resultado de Neumonía con un 98% de confianza, po
 - Arquitectura CNN tipo VGG
 - Evaluación con métricas de clasificación y matriz de confusión
 - Predicción de nuevas imágenes
-- Guardado del modelo en formatos `.keras` y `.h5`
+- Guardado del modelo en formatos `.pth`
 - Preparado para despliegue en una API
 
 ## Estructura del proyecto
