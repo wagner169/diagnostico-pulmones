@@ -115,9 +115,10 @@ Carpeta modelos:
 
 - compare_models
 - process_masks.py
-- train_densenet121
-- train_efficientnet_b0
-- train_resnet50
+- train_densenet121.py
+- train_efficientnet_b0.py
+- train_resnet50.py
+- prueba.py
 
 Carpeta api
 
@@ -191,15 +192,19 @@ Dentro de la carpeta Documentos
 
 2.- Entrena el modelo:
 
-python scripts/entrenar_modelo.py
+python scripts/
+
+train_densenet121.py
+train_efficientnet_b0.py
+train_resnet50.py
 
 3.- Evalúa el modelo: 
 
-python scripts/evaluar_modelo.py
+python scripts/compare_models
 
-4.- Predice nuevas imágenes:
+4.- Predice de problemas pulmonares:
 
-python scripts/predictor.py
+python scripts/prueba.py
 
 
 ## Requisitos
