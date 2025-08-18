@@ -12,10 +12,7 @@ Lib/
 Scripts/
 
 # ░░ ARCHIVOS DE MODELO ░░
-*.h5
-*.keras
-*.pkl
-*.joblib
+*.pth
 
 # ░░ CONFIGURACIONES DE PYCHARM ░░
 .idea/
