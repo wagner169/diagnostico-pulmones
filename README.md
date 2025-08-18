@@ -119,6 +119,7 @@ Carpeta modelos:
 - train_efficientnet_b0.py
 - train_resnet50.py
 - prueba.py
+- predict_with_lime.py
 
 Carpeta api
 
@@ -194,9 +195,9 @@ Dentro de la carpeta Documentos
 
 python scripts/
 
-train_densenet121.py
-train_efficientnet_b0.py
-train_resnet50.py
+- train_densenet121.py
+- train_efficientnet_b0.py
+- train_resnet50.py
 
 3.- Evalúa el modelo: 
 
@@ -204,8 +205,10 @@ python scripts/compare_models
 
 4.- Predice de problemas pulmonares:
 
-python scripts/prueba.py
+python scripts/
 
+- prueba.py
+- predict_with_lime.py
 
 ## Requisitos
 
@@ -228,6 +231,8 @@ python scripts/prueba.py
 - Pillow 10.0+
 
 - tqdm 4.66+
+
+- lime scikit-image
 =======
 # diagnostico-pulmones
 >>>>>>> 9ea0b24f81d248786e722c226c1e0c80077a8068
