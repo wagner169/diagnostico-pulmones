@@ -182,6 +182,9 @@ GitHub de la aplicación
 
 https://github.com/ElizaMarti/UEES-LungX-Ray/tree/main
 
+Manual de uso de APP Web
+Dentro de la carpeta Documentos
+
 
 ## Instrucciones de uso
 
