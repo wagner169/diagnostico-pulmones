@@ -60,16 +60,16 @@ El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Ne
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/95313148-2639-4bd3-9eb9-e26f71cde9c3" />
 
 Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro inteligente que elimina las costillas y otros ruidos para enfocarse únicamente en el tejido pulmonar. Esto asegura que nuestros modelos tomen sus decisiones basándose en la evidencia más relevante para un diagnóstico.
-Mascara
+
+## Mascara
  
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/041ec458-5879-48ec-b57d-080761aa3226" />
 
-
-Imagen con filtro aplicado, lista para procesar exactamente los pulmones
+## Imagen con filtro aplicado, lista para procesar exactamente los pulmones
  
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/345dcb9c-9e65-4a6b-93ee-43b1aea13c66" />
 
-Demostración de las Métricas 
+## Demostración de las Métricas 
 Cada radiografía es analizada simultáneamente por cada modelo entrenado (deep learning) de Inteligencia Artificial. Al comparar sus métricas de rendimiento, podemos justificar por qué el sistema confía más en uno que en otro para dar la respuesta final.
 Cuadro comparativo de rendimiento general
 <img width="572" height="247" alt="image" src="https://github.com/user-attachments/assets/2a5e33d1-fb8f-4410-9630-7f40c284723e" />
