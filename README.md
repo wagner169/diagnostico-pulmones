@@ -222,7 +222,7 @@ python scripts/predictor.py
 
 - Pillow 10.0+
 
- 
+- tqdm 4.66+
 =======
 # diagnostico-pulmones
 >>>>>>> 9ea0b24f81d248786e722c226c1e0c80077a8068
