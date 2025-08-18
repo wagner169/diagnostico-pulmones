@@ -59,7 +59,7 @@ El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Ne
 
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/95313148-2639-4bd3-9eb9-e26f71cde9c3" />
 
-Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro inteligente que elimina las costillas y otros ruidos para enfocarse únicamente en el tejido pulmonar. Esto asegura que nuestra IA tome sus decisiones basándose en la evidencia más relevante para un diagnóstico.
+Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro inteligente que elimina las costillas y otros ruidos para enfocarse únicamente en el tejido pulmonar. Esto asegura que nuestros modelos tomen sus decisiones basándose en la evidencia más relevante para un diagnóstico.
 Mascara
  
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/041ec458-5879-48ec-b57d-080761aa3226" />
