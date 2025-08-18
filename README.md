@@ -71,10 +71,10 @@ Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro 
 
 ## Demostración de las Métricas 
 Cada radiografía es analizada simultáneamente por cada modelo entrenado (deep learning) de Inteligencia Artificial. Al comparar sus métricas de rendimiento, podemos justificar por qué el sistema confía más en uno que en otro para dar la respuesta final.
-Cuadro comparativo de rendimiento general
+## Cuadro comparativo de rendimiento general
 <img width="572" height="247" alt="image" src="https://github.com/user-attachments/assets/2a5e33d1-fb8f-4410-9630-7f40c284723e" />
 
-Este cuadro muestra los resultados de cada modelo, demostrando su fiabilidad probada en nuestras evaluaciones.
+## Este cuadro muestra los resultados de cada modelo, demostrando su fiabilidad probada en nuestras evaluaciones.
 Modelo	Precisión (Accuracy)	Puntaje F1 (Weighted)
 EfficientNet-B0	95.8%	96.1%
 DenseNet121	95.1%	95.5%
