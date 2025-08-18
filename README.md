@@ -53,19 +53,12 @@ Simplemente pasa una radiografía de tórax a la API o sistema donde integres el
 El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Neumonía Viral" con un 95% de confianza). Puedes utilizar este resultado para apoyar la toma de decisiones clínicas.
 
 
+## Interpretabilidad
+## Demostración del Pre-procesamiento (la Máscara)
+## Imagen de entrada
 
+<img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/95313148-2639-4bd3-9eb9-e26f71cde9c3" />
 
-## Nuestro Equipo
-
-Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
-
-Wagner Moreno Alvarado
-
-Jean Paul Amay Cruz
-
-Elizabeth Amada Martínez Reyes
-
-Iván Vera Torres
 
 
 ## Descripcion Tecnica del proyecto
@@ -101,6 +94,20 @@ README.md
 requirements.txt
 .gitignore
 
+
+## Nuestro Equipo
+
+Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
+
+Wagner Moreno Alvarado
+
+Jean Paul Amay Cruz
+
+Elizabeth Amada Martínez Reyes
+
+Iván Vera Torres
+
+
 ## Instrucciones de uso
 
 1.- Instalar dependencias: 
@@ -121,7 +128,7 @@ python scripts/evaluar_modelo.py
 python scripts/predictor.py
 
 
-##Requisitos
+## Requisitos
 
 - Python 3.10+
 
@@ -141,3 +148,5 @@ python scripts/predictor.py
 =======
 # diagnostico-pulmones
 >>>>>>> 9ea0b24f81d248786e722c226c1e0c80077a8068
+
+
