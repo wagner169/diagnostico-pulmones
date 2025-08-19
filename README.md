@@ -135,6 +135,25 @@ README.md
 requirements.txt
 .gitignore
 
+## Dashboard: Streamlit para visualización de resultados
+
+link del dashboard solo para efectos analiticos , no es la API de resultado
+
+https://1ddd735f0741.ngrok-free.app/
+
+<img width="1402" height="1142" alt="image" src="https://github.com/user-attachments/assets/4fde1f63-c7a5-4bf1-819e-77dad144552f" />
+
+
+<img width="1238" height="841" alt="image" src="https://github.com/user-attachments/assets/83f2004f-4a14-4778-8549-a6215ed0ebc9" />
+
+De esta manera se demuestra como internamente trabajan los modelos, dependiendo de la certeza que tenga mas porcentaje que haya alcanzado en cada ejecusion
+
+link del desarrollo en google collab con streamlit
+
+https://colab.research.google.com/drive/1VYUeRJ_vqoeMRraKuUhkjQmA1iCIE-Jn#scrollTo=tOFEeddbwjIP
+
+
+
 ## Nuestro Equipo
 
 Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
