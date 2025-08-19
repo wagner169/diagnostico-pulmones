@@ -1,6 +1,6 @@
 # Sistema de Diagnóstico Médico por Imágenes (Pulmones)
 # Proyecto UEES - Inteligencia Artificial
-# Integrantes:
+# Integrantes :
 Wagner Moreno Alvarado
 Jean Paul Amay Cruz
 Elizabeth Amada Martínez Reyes
@@ -134,6 +134,8 @@ Carpeta api
 README.md
 requirements.txt
 .gitignore
+
+## Dashboard: Streamlit para visualización de resultados
 
 ## Nuestro Equipo
 
