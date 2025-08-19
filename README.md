@@ -152,6 +152,25 @@ link del desarrollo en google collab con streamlit
 
 https://colab.research.google.com/drive/1VYUeRJ_vqoeMRraKuUhkjQmA1iCIE-Jn#scrollTo=tOFEeddbwjIP
 
+# Pagina Web en produccion
+Usamos la API que generamos con los modelos entrenados , de esta manera la consumimos en el sitio web para que sea transparente al usuario, el sitio esta en linea listo para consumir.
+
+link de la pagina web en produccion:
+
+https://uees-lung-x-ray.vercel.app/
+
+<img width="886" height="464" alt="image" src="https://github.com/user-attachments/assets/80df44fe-2356-4bfc-969b-a74c8cb32acd" />
+
+<img width="886" height="502" alt="image" src="https://github.com/user-attachments/assets/8d191452-f641-4153-bfc8-b1598f133ca8" />
+
+<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/42ced6f6-6246-4b66-a065-7cbe6dbb0ec2" />
+
+## GitHub del código de programación de la App web expuesta:
+
+https://github.com/ElizaMarti/UEES-LungX-Ray
+
+## Uso de API con modelos entrenados:
+<img width="884" height="507" alt="image" src="https://github.com/user-attachments/assets/e3516735-f782-43b0-9ed2-d48847188502" />
 
 
 ## Nuestro Equipo
