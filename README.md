@@ -148,9 +148,11 @@ https://1ddd735f0741.ngrok-free.app/
 
 De esta manera se demuestra como internamente trabajan los modelos, dependiendo de la certeza que tenga mas porcentaje que haya alcanzado en cada ejecusion
 
-link del desarrollo en google collab con streamlit
+link del desarrollo en google collab con streamlit :
 
 https://colab.research.google.com/drive/1VYUeRJ_vqoeMRraKuUhkjQmA1iCIE-Jn#scrollTo=tOFEeddbwjIP
+
+las dependecias , archivos pth de cada modelo entrenado se encuentran en la carpeta de modulos de este medio
 
 # Pagina Web en produccion
 Usamos la API que generamos con los modelos entrenados , de esta manera la consumimos en el sitio web para que sea transparente al usuario, el sitio esta en linea listo para consumir.
