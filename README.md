@@ -2,285 +2,229 @@
 # Proyecto UEES - Inteligencia Artificial
 # Integrantes:
 Wagner Moreno Alvarado
-Jean Paul Amay Cruz
 Elizabeth Amada Martínez Reyes
-Iván Vera Torres
 
+Overview
 
-## ¡Accede a la vanguardia de la IA en diagnóstico médico!
-## Resumen
+This project provides a set of high-performance Artificial Intelligence models designed and optimized to analyze chest X-ray images. These trained models are not just experimental prototypes — they are production-ready digital assets that can be integrated into applications, systems, or platforms to support clinical decision-making with high accuracy.
 
-Ponemos a tu disposición un conjunto de modelos de Inteligencia Artificial de alto rendimiento, diseñados y optimizados para analizar radiografías de tórax. Nuestros modelos entrenados no son solo software; son activos digitales listos para ser integrados en tus aplicaciones, sistemas o plataformas existentes, brindando la capacidad de diagnosticar con una precisión superior.
+Trained Models
 
-## Nuestros Modelos Entrenados:
+We developed and optimized deep learning models specialized in medical image classification.
 
-Hemos desarrollado y optimizado modelos de aprendizaje profundo que sobresalen en la clasificación de imágenes médicas.
+4-Class Classification
 
-## Precisión en 4 Clases: 
-Nuestros modelos están entrenados para clasificar imágenes de radiografías en categorías críticas:
+The models classify chest X-ray images into the following categories:
 
 COVID-19
 
-Neumonía Viral
+Viral Pneumonia
 
-Opacidad Pulmonar
+Lung Opacity
 
 Normal
 
-## Arquitectura de Alto Rendimiento: 
-Utilizan una arquitectura de red neuronal convolucional (CNN) tipo VGG, reconocida por su robustez y capacidad para extraer características complejas de las imágenes.
+High-Performance Architecture
 
-## Formatos de Fácil Integración: 
-Entregamos los modelos en formatos estándar de la industria (.pth), lo que garantiza una integración sencilla y sin fricciones en una amplia gama de entornos de desarrollo, desde APIs hasta aplicaciones de escritorio o móviles.
+The system uses Convolutional Neural Network (CNN) architectures inspired by VGG-style designs, known for robust feature extraction in medical imaging tasks.
 
-## El Valor de Integrar Nuestros Modelos
+Trained architectures include:
 
-## Acelera tu Innovación: 
-Ahorra meses de investigación, recolección de datos y entrenamiento de modelos. Nuestros modelos están listos para usar, permitiéndote llevar al mercado soluciones de diagnóstico más rápido.
+EfficientNet-B0
 
-## Resultados Confiables: 
-Reduce la carga de diagnóstico en el personal médico con modelos que ofrecen un alto grado de precisión.
+DenseNet121
 
-## Escalabilidad Garantizada: 
-Nuestros modelos han sido optimizados para un despliegue eficiente, asegurando que tu sistema pueda manejar un alto volumen de predicciones de manera ágil.
+ResNet50
 
-## Cómo Usar e Interpretar los Resultados
+Models are delivered in standard .pth format for seamless integration across environments such as APIs, backend systems, desktop, or mobile applications.
 
-## Uso: 
-Simplemente pasa una radiografía de tórax a la API o sistema donde integres el modelo.
+Value Proposition
+Faster Innovation
 
-## Resultados: 
-El modelo retornará una predicción con un nivel de confianza (por ejemplo, "Neumonía Viral" con un 95% de confianza). Puedes utilizar este resultado para apoyar la toma de decisiones clínicas. Usando el compare_models.py utiliza los 3 modelos y entrega la top class explicado en esta linea de codigo:
+Avoid months of data collection and training. Models are ready for deployment.
 
-    # elegir el modelo más seguro en su predicción
-    best_model = max(results, key=lambda m: max(results[m].values()))
-    best_class = max(results[best_model], key=results[best_model].get)
-    return best_model, best_class, results[best_model]
+Reliable Results
 
-de esta manera escoje el mejor model para la prediccion y tambien los resultados de los demas pronosticos.
+High-accuracy classification reduces diagnostic workload.
 
-## Interpretabilidad
-## Demostración del Pre-procesamiento (la Máscara)
-## Imagen de entrada
+Scalability
 
+Optimized for efficient deployment and high-volume inference.
+
+How Predictions Work
+Usage
+
+Send a chest X-ray image to the integrated API or system.
+
+Output
+
+The model returns a predicted class with confidence score (e.g., "Viral Pneumonia – 95% confidence").
+
+The file compare_models.py evaluates the three trained models and selects the most confident prediction using the following logic:
+
+# Select the model with the highest prediction confidence
+best_model = max(results, key=lambda m: max(results[m].values()))
+best_class = max(results[best_model], key=results[best_model].get)
+return best_model, best_class, results[best_model]
+
+This ensures the final diagnosis is selected from the model with the strongest confidence score while preserving visibility of all model predictions.
+
+Interpretability
+Preprocessing Demonstration (Masking)
+
+The system applies a preprocessing step that removes ribs and non-lung noise, focusing exclusively on lung tissue before classification.
+
+Input Image
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/95313148-2639-4bd3-9eb9-e26f71cde9c3" />
-
-Nuestros modelos no ven la imagen completa. Su primer paso es aplicar un filtro inteligente que elimina las costillas y otros ruidos para enfocarse únicamente en el tejido pulmonar. Esto asegura que nuestros modelos tomen sus decisiones basándose en la evidencia más relevante para un diagnóstico.
-
-## Mascara
- 
+Lung Mask
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/041ec458-5879-48ec-b57d-080761aa3226" />
-
-## Imagen con filtro aplicado, lista para procesar exactamente los pulmones
- 
+Processed Lung Image
 <img width="467" height="467" alt="image" src="https://github.com/user-attachments/assets/345dcb9c-9e65-4a6b-93ee-43b1aea13c66" />
 
-## Demostración de las Métricas 
-Cada radiografía es analizada simultáneamente por cada modelo entrenado (deep learning) de Inteligencia Artificial. Al comparar sus métricas de rendimiento, podemos justificar por qué el sistema confía más en uno que en otro para dar la respuesta final.
-## Cuadro comparativo de rendimiento general
-<img width="572" height="247" alt="image" src="https://github.com/user-attachments/assets/2a5e33d1-fb8f-4410-9630-7f40c284723e" />
+This preprocessing ensures decisions are based on relevant pulmonary structures only.
 
-## Este cuadro muestra los resultados de cada modelo, demostrando su fiabilidad probada en nuestras evaluaciones.
-Modelo	Precisión (Accuracy)	Puntaje F1 (Weighted)
+Model Performance Metrics
+
+Each X-ray is analyzed by all trained models. Performance comparison allows the system to justify the final selected result.
+
+Overall Performance Comparison
+Model	Accuracy	Weighted F1 Score
 EfficientNet-B0	95.8%	96.1%
 DenseNet121	95.1%	95.5%
 ResNet50	94.6%	94.8%
+<img width="572" height="247" alt="image" src="https://github.com/user-attachments/assets/2a5e33d1-fb8f-4410-9630-7f40c284723e" />
 
- <img width="975" height="605" alt="image" src="https://github.com/user-attachments/assets/4a12d75f-24a5-4280-bf50-05f46e792859" />
+The system selects the most reliable prediction based on confidence level.
 
-(Nota: El bloque representa el porcentaje del puntaje F1. Cuanto más alta la barra, mejor el rendimiento del modelo.)
-Estas métricas demuestran que la solución no solo da una respuesta, sino que la da después de que los modelos se ponen en marcha, seleccionan la opinión de mayor calidad para ofrecer el diagnóstico más fiable.
+Example:
 
+ResNet50: Pneumonia (92%)
 
-## Demostración de la Lógica de la API (la Selección del Resultado)
+DenseNet121: Pneumonia (93%)
 
-<img width="975" height="975" alt="image" src="https://github.com/user-attachments/assets/14a08441-0b01-420b-8ae8-fbcb289e577b" />
+EfficientNet-B0: Pneumonia (98%)
 
- 
-Una vez que cada modelo ha dado su diagnóstico, toma la decisión final con una lógica simple pero poderosa: seleccionar el diagnóstico que tiene el mayor nivel de confianza. Por ejemplo, si los tres modelos analizan la misma radiografía y sus resultados son:
-o	ResNet50: Neumonía (92% de confianza)
-o	DenseNet121: Neumonía (93% de confianza)
-o	EfficientNet-B0: Neumonía (98% de confianza)
-La API presenta al usuario el resultado de Neumonía con un 98% de confianza, porque fue el diagnóstico más sólido. Esta es nuestra forma de garantizar que el resultado final sea siempre el más confiable y seguro posible para el profesional."
+Final result presented: Pneumonia – 98% confidence
 
+Technical Description
 
-## Descripcion Tecnica del proyecto
+4-class image classification (COVID, Normal, Viral Pneumonia, Lung Opacity)
 
-- Clasificación de imágenes en 4 clases: **COVID, Normal, Neumonía Viral, Opacidad Pulmonar**
-- Arquitectura CNN tipo VGG
-- Evaluación con métricas de clasificación y matriz de confusión
-- Predicción de nuevas imágenes
-- Guardado del modelo en formatos `.pth`
-- Preparado para despliegue en una API
+CNN-based architectures
 
-## Estructura del proyecto
+Evaluation with classification metrics and confusion matrix
 
-Carpeta Pulmones contiene: 
+Inference on new images
 
-Carpeta modelos: 
+Model export in .pth format
 
-- compare_models
-- process_masks.py
-- train_densenet121.py
-- train_efficientnet_b0.py
-- train_resnet50.py
-- prueba.py
-- predict_with_lime.py
+API-ready deployment
 
-Carpeta api
+Project Structure
+/models
 
-- app.py
+compare_models.py
+
+process_masks.py
+
+train_densenet121.py
+
+train_efficientnet_b0.py
+
+train_resnet50.py
+
+prueba.py
+
+predict_with_lime.py
+
+/api
+
+app.py
+
+Other files:
 
 README.md
+
 requirements.txt
+
 .gitignore
 
-## Dashboard: Streamlit para visualización de resultados
+Streamlit Dashboard (Analytical Visualization Only)
 
-link del dashboard solo para efectos analiticos , no es la API de resultado
+Dashboard (for analysis demonstration):
 
 https://1ddd735f0741.ngrok-free.app/
 
-<img width="1402" height="1142" alt="image" src="https://github.com/user-attachments/assets/4fde1f63-c7a5-4bf1-819e-77dad144552f" />
-
-
-<img width="1238" height="841" alt="image" src="https://github.com/user-attachments/assets/83f2004f-4a14-4778-8549-a6215ed0ebc9" />
-
-De esta manera se demuestra como internamente trabajan los modelos, dependiendo de la certeza que tenga mas porcentaje que haya alcanzado en cada ejecusion
-
-link del desarrollo en google collab con streamlit :
+Google Colab Development:
 
 https://colab.research.google.com/drive/1VYUeRJ_vqoeMRraKuUhkjQmA1iCIE-Jn#scrollTo=tOFEeddbwjIP
 
-las dependecias , archivos pth de cada modelo entrenado se encuentran en la carpeta de modulos de este medio
+Production Deployment
 
-# Pagina Web en produccion
-Usamos la API que generamos con los modelos entrenados , de esta manera la consumimos en el sitio web para que sea transparente al usuario, el sitio esta en linea listo para consumir.
+The trained models are exposed through a deployed API and consumed by a live web application.
 
-link de la pagina web en produccion:
+Live Application:
 
 https://uees-lung-x-ray.vercel.app/
 
-<img width="886" height="464" alt="image" src="https://github.com/user-attachments/assets/80df44fe-2356-4bfc-969b-a74c8cb32acd" />
-
-<img width="886" height="502" alt="image" src="https://github.com/user-attachments/assets/8d191452-f641-4153-bfc8-b1598f133ca8" />
-
-<img width="886" height="500" alt="image" src="https://github.com/user-attachments/assets/42ced6f6-6246-4b66-a065-7cbe6dbb0ec2" />
-
-## GitHub del código de programación de la App web expuesta:
-
-https://github.com/ElizaMarti/UEES-LungX-Ray
-
-## Uso de API con modelos entrenados:
-<img width="884" height="507" alt="image" src="https://github.com/user-attachments/assets/e3516735-f782-43b0-9ed2-d48847188502" />
-
-
-## Nuestro Equipo
-
-Este proyecto es el resultado de la dedicación y el conocimiento de un equipo de estudiantes de la Mestria en Ciencia de Datos e Inteligencia de Negocios - UEES:
-
-Wagner Moreno Alvarado
-
-Jean Paul Amay Cruz
-
-Elizabeth Amada Martínez Reyes
-
-Iván Vera Torres
-
-## Enlaces de interes
-Modelos entrenados
-
-Efficientnet
-
-https://drive.google.com/file/d/1KpLhlrcAgSaIUIIABNpu6LzFGGG-a2TS/view?usp=drive_link 
-
-Densenet
-
-https://drive.google.com/file/d/1FuliZMAQdaiOWYlsahiYJqzc8fy_2oUQ/view?usp=drive_link 
-
-resnet
-
-https://drive.google.com/file/d/1yhdFMGyaw-gW4yU5pPl6CFJRZVvS44np/view?usp=drive_link
-
-
-
-Api para usar el servicio y los modelos entrenados
+API Endpoint:
 
 https://ensemble-api-qzpf.onrender.com
 
+Web App Repository:
 
+https://github.com/ElizaMarti/UEES-LungX-Ray
 
-Aplicación funcional con las métricas para poder usar el api
-
-https://uees-lung-x-ray.vercel.app/
-
-
-
-GitHub del modelo entrenado para render
+API Repository:
 
 https://github.com/wagner169/ensemble-api
 
+Trained Models (Download Links)
 
+EfficientNet:
+https://drive.google.com/file/d/1KpLhlrcAgSaIUIIABNpu6LzFGGG-a2TS/view?usp=drive_link
 
-GitHub de la aplicación 
+DenseNet:
+https://drive.google.com/file/d/1FuliZMAQdaiOWYlsahiYJqzc8fy_2oUQ/view?usp=drive_link
 
-https://github.com/ElizaMarti/UEES-LungX-Ray/tree/main
+ResNet:
+https://drive.google.com/file/d/1yhdFMGyaw-gW4yU5pPl6CFJRZVvS44np/view?usp=drive_link
 
-Manual de uso de APP Web
-Dentro de la carpeta Documentos
+Installation & Usage
+Install dependencies
+pip install -r requirements.txt
+Train models
+python train_densenet121.py
+python train_efficientnet_b0.py
+python train_resnet50.py
+Evaluate models
+python compare_models.py
+Run prediction
+python prueba.py
+python predict_with_lime.py
+Requirements
 
+Python 3.10+
 
-## Instrucciones de uso
+TensorFlow 2.15+
 
-1.- Instalar dependencias: 
+NumPy 1.26+
 
- ```bash
-   pip install -r requirements.txt
+Matplotlib 3.8+
 
-2.- Entrena el modelo:
+Seaborn 0.12+
 
-python scripts/
+Scikit-learn 1.3+
 
-- train_densenet121.py
-- train_efficientnet_b0.py
-- train_resnet50.py
+OpenCV 4.9+
 
-3.- Evalúa el modelo: 
+Pandas 2.1+
 
-python scripts/compare_models
+Pillow 10.0+
 
-4.- Predice de problemas pulmonares:
+tqdm 4.66+
 
-python scripts/
+lime
 
-- prueba.py
-- predict_with_lime.py
-
-## Requisitos
-
-- Python 3.10+
-
-- TensorFlow 2.15+
-
-- NumPy 1.26+
-
-- Matplotlib 3.8+
-
-- Seaborn 0.12+
-
-- Scikit-learn 1.3+
-
-- OpenCV 4.9+
-
-- Pandas 2.1+
-
-- Pillow 10.0+
-
-- tqdm 4.66+
-
-- lime scikit-image
-=======
-# diagnostico-pulmones
->>>>>>> 9ea0b24f81d248786e722c226c1e0c80077a8068
-
+scikit-image
 
