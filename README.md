@@ -1,6 +1,6 @@
-# Sistema de Diagnóstico Médico por Imágenes (Pulmones)
-# Proyecto UEES - Inteligencia Artificial
-# Integrantes:
+AI-Based Medical Imaging Diagnostic System (Lungs)
+# UEES Project – Artificial Intelligence
+# Team Members:
 Wagner Moreno Alvarado
 Elizabeth Amada Martínez Reyes
 
